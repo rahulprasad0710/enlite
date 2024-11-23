@@ -1,4 +1,6 @@
 import { Layout, theme } from "antd";
+import { Outlet } from "react-router-dom";
+
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Header";
 const { Content } = Layout;
@@ -27,7 +29,7 @@ const App = () => {
                             borderRadius: borderRadiusLG,
                         }}
                     >
-                        Content
+                        <Outlet />
                     </Content>
                 </Layout>
             </Layout>

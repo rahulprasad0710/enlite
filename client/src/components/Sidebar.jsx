@@ -1,25 +1,13 @@
 import { MailOutlined, UploadOutlined } from "@ant-design/icons";
 import { Layout, Menu, theme } from "antd";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
     const { Sider } = Layout;
     const {
         token: { colorBgContainer },
     } = theme.useToken();
-    const sidebarMenus = [
-        {
-            key: "sub1",
-            label: "Upload",
-            icon: <UploadOutlined />,
-            children: undefined,
-        },
-        {
-            key: "sub2",
-            label: "Mail",
-            icon: <MailOutlined />,
-            children: undefined,
-        },
-    ];
+
     return (
         <Sider
             width={200}
@@ -36,8 +24,14 @@ const Sidebar = () => {
                     height: "100%",
                     borderRight: 0,
                 }}
-                items={sidebarMenus}
-            />
+            >
+                <Menu.Item key='1' icon={<UploadOutlined />}>
+                    <Link to='/upload'>Upload</Link>
+                </Menu.Item>
+                <Menu.Item key='2' icon={<MailOutlined />}>
+                    <Link to='/upload'>Mail</Link>
+                </Menu.Item>
+            </Menu>
         </Sider>
     );
 };
